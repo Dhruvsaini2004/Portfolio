@@ -6,6 +6,7 @@ export const profile = {
   role: "Full-Stack Developer & CSE Student",
   email: "dhruvsaini0125@gmail.com",
   phone: "+91 9058182471",
+  resume: "/DhruvResume.pdf",
   socials: {
     github: "https://github.com/Dhruvsaini2004",
     linkedin: "https://www.linkedin.com/in/dhruv-saini-27a30a296/",

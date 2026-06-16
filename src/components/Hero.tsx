@@ -176,9 +176,8 @@ export function Hero() {
           </motion.div>
           <motion.div whileHover={hoverLift} whileTap={tapPress}>
             <Button asChild variant="outline" size="lg">
-              <a href={`mailto:${profile.email}`}>
-                <Mail />
-                Get in touch
+              <a href={profile.resume} target="_blank" rel="noreferrer">
+                Resume
               </a>
             </Button>
           </motion.div>
