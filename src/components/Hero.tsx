@@ -121,16 +121,18 @@ export function Hero() {
         className="mx-auto flex w-full max-w-4xl flex-col items-center text-center"
       >
         <motion.div variants={rise}>
-          <Badge variant="secondary" className="shadow-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            Currently building
-            <span className="font-semibold text-accent">
-              {profile.currentlyBuilding.name}
-            </span>
-          </Badge>
+          <a href={`#project-${profile.currentlyBuilding.name.toLowerCase().replace(/\s+/g, "-")}`} className="no-underline">
+            <Badge variant="secondary" className="shadow-sm cursor-pointer transition-colors hover:border-primary">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              Currently building
+              <span className="font-semibold text-accent">
+                {profile.currentlyBuilding.name}
+              </span>
+            </Badge>
+          </a>
         </motion.div>
 
         <motion.p
@@ -145,7 +147,7 @@ export function Hero() {
           className="mt-5 text-balance font-display text-6xl font-extrabold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl"
         >
           <span className="text-gradient">{profile.headline.name}</span>
-          <span className="ml-2 inline-block h-[0.72em] w-[0.1em] rounded-sm bg-accent align-baseline animate-blink" />
+          <span className="ml-3 inline-block h-[0.08em] w-[0.5em] translate-y-[0.05em] bg-accent align-baseline animate-blink" />
         </motion.h1>
 
         <motion.p

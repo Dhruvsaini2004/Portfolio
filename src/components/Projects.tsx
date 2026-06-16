@@ -175,7 +175,7 @@ export function Projects() {
             {profile.projects.map((project, i) => {
               const stickyStyle = { top: `${100 + i * 22}px` }
               return (
-                <div key={project.name} className="sticky" style={stickyStyle}>
+                <div key={project.name} id={`project-${project.name.toLowerCase().replace(/\s+/g, "-")}`} className="sticky" style={stickyStyle}>
                   <ProjectCard project={project} />
                 </div>
               )
