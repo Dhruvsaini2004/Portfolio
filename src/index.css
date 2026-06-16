@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm paper + ink, light only */
+    --background: 40 33% 97%;
+    --foreground: 30 9% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 9% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 9% 12%;
+
+    /* Vermilion */
+    --primary: 9 79% 52%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 40 22% 93%;
+    --secondary-foreground: 30 9% 18%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 30 6% 40%;
+
+    /* Amber / gold */
+    --accent: 34 78% 51%;
+    --accent-foreground: 30 12% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 18% 86%;
+    --input: 36 18% 86%;
+    --ring: 9 79% 52%;
+
+    --radius: 0.65rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: hsl(var(--primary) / 0.2);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  .pixel-shadow {
+    box-shadow: 4px 4px 0 0 hsl(var(--foreground));
+  }
+  .pixel-shadow-accent {
+    box-shadow: 3px 3px 0 0 hsl(var(--accent));
+  }
+}
+
+/* Swiper marquee — linear autoplay, no easing */
+.tech-marquee .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
